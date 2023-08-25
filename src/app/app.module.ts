@@ -4,7 +4,7 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { KlesMatMomentModule, KlesMaterialDatepickerModule } from 'kles-material-datepicker';
+import { KlesMatDatepickerIntl, KlesMatMomentModule, KlesMaterialDatepickerModule } from 'kles-material-datepicker';
 import { MaterialModule } from './modules/material.module';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -13,6 +13,7 @@ import localeFr from '@angular/common/locales/fr';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { DatepickerI18n } from './datepickerI18n';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -42,7 +43,11 @@ registerLocaleData(localeFr);
     )
   ],
   exports: [KlesMaterialDatepickerModule],
-  providers: [TranslateService, { provide: LOCALE_ID, useValue: 'fr-FR' }],
+  providers: [TranslateService, { provide: LOCALE_ID, useValue: 'fr-FR' },
+  {
+    provide: KlesMatDatepickerIntl, deps: [TranslateService],
+    useFactory: (translateService: TranslateService) => new DatepickerI18n(translateService).getDatepickerIntl()
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

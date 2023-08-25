@@ -15,3 +15,5 @@ export * from './lib/timepicker/timepicker.component';
 export * from './lib/timepicker/timeinput/timeinput.component';
 
 export * from './lib/datepicker-content/datepicker-content';
+export * from './lib/datepicker-intl/datepicker-intl';
+
