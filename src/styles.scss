@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+// @import "@angular/material/prebuilt-themes/indigo-pink.css";
+// @import "./assets/theme/theme-hermes/processed.scss";
+// @import "./assets/theme/theme-hermes/comon";
+
+html,
+body {
+    height: 100%;
+    overflow-y: hidden;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.content {
+    flex: 1;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 15px;
+    // overflow-y: auto;
+}
+
+.all-wrap {
+    // min-height: 100vh;
+    min-height: 100%;
+}
+
+.page-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+//   .mat-tooltip{
+//   color: white;
+//   background-color: #f02f00;
+// }
+
+/*
+   * Make the Component injected by Router Outlet full height:
+   */
+main {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    > *:not(router-outlet) {
+        flex: 1;
+        display: block;
+    }
+}
+
+.allow-cr {
+    white-space: pre-line;
+}
+

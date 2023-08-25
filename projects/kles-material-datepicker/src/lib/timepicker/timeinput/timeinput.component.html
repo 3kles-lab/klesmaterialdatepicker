@@ -1,0 +1,9 @@
+<div role="group" class="kles-time-input-container" [formGroup]="parts"
+    [attr.aria-labelledby]="_formField?.getLabelId()">
+    <input class="kles-time-input-element" formControlName="hour" (input)="_handleInputHour(parts.controls.hour, minute)"
+        #hour [placeholder]="this.focused ? '12' : ''" maxlength="2" size="2" aria-label="Hour">
+    <span class="kles-time-input-spacer">:</span>
+    <input class="kles-time-input-element" formControlName="minute" (input)="_handleInputMinute(parts.controls.minute)" #minute size="2" maxlength="2"
+        [placeholder]="this.focused ? '00' : ''">
+
+</div>

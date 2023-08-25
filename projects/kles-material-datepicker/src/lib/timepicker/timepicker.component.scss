@@ -1,0 +1,40 @@
+$calendar-padding: 8px;
+$non-touch-calendar-cell-size: 40px;
+$non-touch-calendar-width: $non-touch-calendar-cell-size * 7 + $calendar-padding * 2;
+
+.time-picker {
+    width: $non-touch-calendar-width;
+    margin: 20px 8px 8px 8px;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.time-picker .month {
+    font-weight: 500;
+}
+
+.time-picker .day {
+    color: #383C3E
+}
+
+
+.time-picker .date-number {
+    color: var(--primary-color);
+    font-size: xx-large;
+}
+
+.time-picker .time-picker-input {
+    width: 120px;
+}
+
+.time-picker .time-picker-icon {
+    color: var(--primary-color);
+}
+
+.time-picker .time-picker-input .mat-form-field-wrapper {
+    margin: 0;
+    padding: 0;
+}

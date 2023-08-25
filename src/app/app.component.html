@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+    <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input formControlName="date" matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <div matSuffix>
+            <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+        </div>
+
+        <kles-mat-datepicker #picker></kles-mat-datepicker>
+    </mat-form-field>
+
+</form>

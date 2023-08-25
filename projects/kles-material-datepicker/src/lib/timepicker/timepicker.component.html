@@ -1,0 +1,26 @@
+<div class="time-picker">
+
+    <div style="display: inline-grid; grid-template-columns: auto auto; gap: 8px; align-items: center;">
+        <div class="date-number">
+            {{date}}
+        </div>
+        <div>
+            <div class="month">{{month}} {{year}}</div>
+            <div class="day">{{day}}</div>
+        </div>
+    </div>
+
+
+    <div>
+        <form [formGroup]="form">
+            <mat-form-field appearance="outline" class="time-picker-input">
+                <mat-label>Time</mat-label>
+                <kles-time-input formControlName="time"></kles-time-input>
+                <mat-icon matPrefix class="time-picker-icon">schedule</mat-icon>
+            </mat-form-field>
+        </form>
+
+    </div>
+
+
+</div>
