@@ -21,8 +21,10 @@
         [selection]="calendarValue"></kles-time-picker>
 
     <div class="buttons">
+        <button type="button" mat-raised-button (click)="datepicker.close()">{{
+            _cancelButtonText }}</button>
         <button type="button" mat-raised-button [color]="color || 'primary'" (focus)="_closeButtonFocused = true"
-            (blur)="_closeButtonFocused = false" (click)="close()">{{ _closeButtonText }}</button>
+            (blur)="_closeButtonFocused = false" (click)="close()">{{ _validateButtonText }}</button>
     </div>
 
 

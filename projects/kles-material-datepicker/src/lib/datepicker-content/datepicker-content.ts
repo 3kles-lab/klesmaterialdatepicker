@@ -4,6 +4,7 @@ import { CanColor, DateAdapter, mixinColor } from "@angular/material/core";
 import { Subject, Subscription } from "rxjs";
 import { TemplatePortal } from "@angular/cdk/portal";
 import { KlesMatDateAdapter } from "../adapters/date-adapter";
+import { KlesMatDatepickerIntl } from "../datepicker-intl/datepicker-intl";
 
 const _MatDatepickerContentBase = mixinColor(
     class {
@@ -59,7 +60,9 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
     readonly _animationDone = new Subject<void>();
 
     /** Text for the close button. */
-    _closeButtonText: string;
+    // _closeButtonText: string;
+    _cancelButtonText: string;
+    _validateButtonText: string;
 
     /** Whether the close button currently has focus. */
     _closeButtonFocused: boolean;
@@ -78,10 +81,11 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
         @Optional()
         @Inject(MAT_DATE_RANGE_SELECTION_STRATEGY)
         private _rangeSelectionStrategy: MatDateRangeSelectionStrategy<D>,
-        intl: MatDatepickerIntl,
+        intl: KlesMatDatepickerIntl,
     ) {
         super(elementRef);
-        this._closeButtonText = intl.closeCalendarLabel;
+        this._cancelButtonText = intl.cancelCalendarLabel;
+        this._validateButtonText = intl.validateCalendarLabel;
     }
 
     ngOnInit() {
