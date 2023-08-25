@@ -38,6 +38,7 @@ export abstract class KlesMatDatepickerBase<
 
     /** An input indicating the type of the custom header component for the calendar, if set. */
     @Input() calendarHeaderComponent: ComponentType<any>;
+    @Input() hasBackdrop!: boolean;
 
     /** The date to open the calendar to initially. */
     @Input()
@@ -388,7 +389,7 @@ export abstract class KlesMatDatepickerBase<
         const overlayRef = (this._overlayRef = this._overlay.create(
             new OverlayConfig({
                 positionStrategy: isDialog ? this._getDialogStrategy() : this._getDropdownStrategy(),
-                hasBackdrop: true,
+                hasBackdrop: this.hasBackdrop,
                 backdropClass: [
                     isDialog ? 'cdk-overlay-dark-backdrop' : 'mat-overlay-transparent-backdrop',
                     this._backdropHarnessClass,
