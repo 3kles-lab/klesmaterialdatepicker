@@ -14,7 +14,7 @@
     <div>
         <form [formGroup]="form">
             <mat-form-field appearance="outline" class="time-picker-input">
-                <mat-label>Time</mat-label>
+                <mat-label>{{_timePickerTextLabel}}</mat-label>
                 <kles-time-input formControlName="time"></kles-time-input>
                 <mat-icon matPrefix class="time-picker-icon">schedule</mat-icon>
             </mat-form-field>

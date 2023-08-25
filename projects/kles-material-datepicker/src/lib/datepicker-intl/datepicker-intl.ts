@@ -5,4 +5,5 @@ import { MatDatepickerIntl } from "@angular/material/datepicker";
 export class KlesMatDatepickerIntl extends MatDatepickerIntl {
     validateCalendarLabel = 'Confirm';
     cancelCalendarLabel = 'Cancel';
+    timePickerTextLabel = 'Time';
 }

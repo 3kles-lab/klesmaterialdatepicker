@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { DateAdapter } from "@angular/material/core";
 import { Subject } from "rxjs";
 import { filter, takeUntil } from "rxjs/operators";
+import { KlesMatDatepickerIntl } from "../datepicker-intl/datepicker-intl";
 
 @Component({
     selector: 'kles-time-picker',
@@ -12,6 +13,7 @@ import { filter, takeUntil } from "rxjs/operators";
 })
 export class KlesTimePicker implements OnInit, OnDestroy {
 
+    _timePickerTextLabel: string;
     private _onDestroy = new Subject<void>()
     form: FormGroup;
 
@@ -37,8 +39,9 @@ export class KlesTimePicker implements OnInit, OnDestroy {
 
     }
 
-    constructor(private dateAdapter: DateAdapter<any>) {
+    constructor(private dateAdapter: DateAdapter<any>, intl: KlesMatDatepickerIntl) {
         this.initForm();
+        this._timePickerTextLabel = intl.timePickerTextLabel;
     }
 
     ngOnInit(): void {
