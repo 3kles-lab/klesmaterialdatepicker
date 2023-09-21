@@ -85,9 +85,14 @@ $touch-max-height: 788px;
 }
 
 .mat-datepicker-content-container .buttons {
-    margin: 5px 8px 5px 8px;
+    margin: 5px 2px 5px 2px;
     text-align: end;
 }
+
+.mat-datepicker-content-container .buttons .mat-mdc-raised-button {
+    margin: 0 0.3em;
+}
+
 
 @media all and (orientation: landscape) {
     .mat-datepicker-content-touch .mat-datepicker-content-container {

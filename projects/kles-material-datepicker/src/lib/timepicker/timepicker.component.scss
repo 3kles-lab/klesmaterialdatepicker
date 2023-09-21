@@ -34,6 +34,7 @@ $non-touch-calendar-width: $non-touch-calendar-cell-size * 7 + $calendar-padding
     color: var(--primary-color);
 }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
 .time-picker .time-picker-input .mat-form-field-wrapper {
     margin: 0;
     padding: 0;
