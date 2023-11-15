@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "KlesMaterialDatepicker:build"
+            "buildTarget": "KlesMaterialDatepicker:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "KlesMaterialDatepicker:build:production"
+              "buildTarget": "KlesMaterialDatepicker:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "KlesMaterialDatepicker:build"
+            "buildTarget": "KlesMaterialDatepicker:build"
           }
         },
         "test": {
