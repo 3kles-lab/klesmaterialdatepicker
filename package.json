@@ -1,6 +1,6 @@
 {
   "name": "@3kles/kles-material-datepicker",
-  "version": "17.0.1",
+  "version": "18.0.0",
   "scripts": {
     "build:lib": "ng build kles-material-datepicker --configuration production",
     "publish:lib": "cd dist/kles-material-datepicker && npm publish --registry 'http://192.168.111.61:8081/repository/npm-3kles/'  --force",
@@ -14,15 +14,15 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.13",
-    "@angular/cdk": "^17.0.0",
+    "@angular/cdk": "^18.2.14",
     "@angular/common": "^18.2.13",
     "@angular/compiler": "^18.2.13",
     "@angular/core": "^18.2.13",
     "@angular/forms": "^18.2.13",
     "@angular/localize": "^18.2.13",
-    "@angular/material": "^17.0.0",
-    "@angular/material-luxon-adapter": "^17.0.0",
-    "@angular/material-moment-adapter": "^17.0.0",
+    "@angular/material": "^18.2.14",
+    "@angular/material-luxon-adapter": "^18.2.14",
+    "@angular/material-moment-adapter": "^18.2.14",
     "@angular/platform-browser": "^18.2.13",
     "@angular/platform-browser-dynamic": "^18.2.13",
     "@angular/router": "^18.2.13",
