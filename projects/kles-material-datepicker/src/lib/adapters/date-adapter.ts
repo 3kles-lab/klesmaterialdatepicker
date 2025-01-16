@@ -6,9 +6,9 @@ export abstract class KlesMatDateAdapter<D> extends DateAdapter<D> {
     abstract getHour(date: D): number;
     abstract getMinute(date: D): number;
     abstract getSecond(date: D): number;
-    abstract setHour(date: D, value: number): void;
-    abstract setMinute(date: D, value: number): void;
-    abstract setSecond(date: D, value: number): void;
+    abstract setHour(date: D, value: number): D;
+    abstract setMinute(date: D, value: number): D;
+    abstract setSecond(date: D, value: number): D;
 
     isSameTime(a: D, b: D): boolean {
         if (a == null || b == null) return true;

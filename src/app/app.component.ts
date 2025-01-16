@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { MAT_LUXON_DATE_FORMATS } from '@angular/material-luxon-adapter';
 
 @Component({
   selector: 'app-root',
@@ -17,5 +18,6 @@ export class AppComponent {
     })
 
     this.form.valueChanges.subscribe((value) => console.log('form value change!', value))
+    console.log(MAT_LUXON_DATE_FORMATS);
   }
 }

@@ -271,14 +271,14 @@ export class KlesMatLuxonAdapter extends KlesMatDateAdapter<LuxonDateTime> {
     getSecond(date: LuxonDateTime): number {
         return date.second;
     }
-    setHour(date: LuxonDateTime, value: number): void {
-        date.set({ hour: value });
+    setHour(date: LuxonDateTime, value: number): LuxonDateTime {
+        return date.set({ hours: value });
     }
-    setMinute(date: LuxonDateTime, value: number): void {
-        date.set({ minute: value });
+    setMinute(date: LuxonDateTime, value: number): LuxonDateTime {
+        return date.set({ minute: value });
     }
-    setSecond(date: LuxonDateTime, value: number): void {
-        date.set({ second: value });
+    setSecond(date: LuxonDateTime, value: number): LuxonDateTime {
+        return date.set({ second: value });
     }
 
     /** Gets the options that should be used when constructing a new `DateTime` object. */

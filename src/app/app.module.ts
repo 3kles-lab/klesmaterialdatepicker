@@ -4,7 +4,7 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { KlesMatDatepickerIntl, KlesMatMomentModule, KlesMaterialDatepickerModule } from 'kles-material-datepicker';
+import { KlesMatDatepickerIntl, KlesMatMomentModule, KlesMaterialDatepickerModule, KlesMatLuxonModule } from 'kles-material-datepicker';
 import { MaterialModule } from './modules/material.module';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
@@ -14,6 +14,7 @@ import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { DatepickerI18n } from './datepickerI18n';
+import { MatLuxonDateModule } from '@angular/material-luxon-adapter';
 registerLocaleData(localeFr);
 
 @NgModule({ declarations: [
@@ -25,8 +26,10 @@ registerLocaleData(localeFr);
         AppRoutingModule,
         MaterialModule,
         MatMomentDateModule,
+        MatLuxonDateModule,
         KlesMaterialDatepickerModule,
-        KlesMatMomentModule,
+        // KlesMatMomentModule,
+        KlesMatLuxonModule,
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
