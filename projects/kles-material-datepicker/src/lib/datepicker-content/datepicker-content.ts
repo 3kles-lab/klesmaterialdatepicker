@@ -124,11 +124,8 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
 
     close() {
         if (this.calendarValue) {
-            console.log(this.calendarValue);
             this.calendarValue = (this._dateAdapter as any).setHour(this.calendarValue, this.timeValue.hour);
-            console.log(this.calendarValue);
             this.calendarValue = (this._dateAdapter as any).setMinute(this.calendarValue, this.timeValue.minute);
-            console.log(this.calendarValue);
             this._model.add(this.calendarValue);
         }
 

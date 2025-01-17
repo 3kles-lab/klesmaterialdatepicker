@@ -4,6 +4,7 @@ import { DateAdapter } from "@angular/material/core";
 import { Subject } from "rxjs";
 import { filter, takeUntil } from "rxjs/operators";
 import { KlesMatDatepickerIntl } from "../datepicker-intl/datepicker-intl";
+import { KlesMatDateAdapter } from "../adapters/date-adapter";
 
 @Component({
     selector: 'kles-time-picker',
@@ -34,12 +35,12 @@ export class KlesTimePicker implements OnInit, OnDestroy {
             this.year = this.dateAdapter.getYear(s);
             this.month = this.dateAdapter.format(s, 'MMMM');
             this.date = this.dateAdapter.getDate(s);
-            this.day = this.dateAdapter.format(s, 'dddd');
+            this.day = this.dateAdapter.getDay(s);
         }
 
     }
 
-    constructor(private dateAdapter: DateAdapter<any>, intl: KlesMatDatepickerIntl) {
+    constructor(private dateAdapter: KlesMatDateAdapter<any>, intl: KlesMatDatepickerIntl) {
         this.initForm();
         this._timePickerTextLabel = intl.timePickerTextLabel;
     }

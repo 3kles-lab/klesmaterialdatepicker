@@ -2,13 +2,13 @@ import { DateAdapter } from '@angular/material/core';
 
 
 export abstract class KlesMatDateAdapter<D> extends DateAdapter<D> {
-   
     abstract getHour(date: D): number;
     abstract getMinute(date: D): number;
     abstract getSecond(date: D): number;
     abstract setHour(date: D, value: number): D;
     abstract setMinute(date: D, value: number): D;
     abstract setSecond(date: D, value: number): D;
+    abstract getDay(date: D): string;
 
     isSameTime(a: D, b: D): boolean {
         if (a == null || b == null) return true;
@@ -18,9 +18,9 @@ export abstract class KlesMatDateAdapter<D> extends DateAdapter<D> {
     }
 
     copyTime(toDate: D, fromDate: D) {
-        this.setHour(toDate, this.getHour(fromDate));
-        this.setMinute(toDate, this.getMinute(fromDate));
-        this.setSecond(toDate, this.getSecond(fromDate));
+        toDate = this.setHour(toDate, this.getHour(fromDate));
+        toDate = this.setMinute(toDate, this.getMinute(fromDate));
+        toDate = this.setSecond(toDate, this.getSecond(fromDate));
     }
 
     compareDateWithTime(first: D, second: D, showSeconds?: boolean): number {
@@ -37,9 +37,9 @@ export abstract class KlesMatDateAdapter<D> extends DateAdapter<D> {
         if (!Array.isArray(defaultTime)) {
             throw Error('@Input DefaultTime should be an array');
         }
-        this.setHour(date, defaultTime[0] || 0);
-        this.setMinute(date, defaultTime[1] || 0);
-        this.setSecond(date, defaultTime[2] || 0);
+        date = this.setHour(date, defaultTime[0] || 0);
+        date = this.setMinute(date, defaultTime[1] || 0);
+        date = this.setSecond(date, defaultTime[2] || 0);
     }
 
 }

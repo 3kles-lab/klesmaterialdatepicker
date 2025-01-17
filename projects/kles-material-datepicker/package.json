@@ -1,6 +1,6 @@
 {
   "name": "@3kles/kles-material-datepicker",
-  "version": "18.0.0",
+  "version": "18.0.1",
   "peerDependencies": {
     "@angular/animations": "^18.2.13",
     "@angular/cdk": "^18.2.14",

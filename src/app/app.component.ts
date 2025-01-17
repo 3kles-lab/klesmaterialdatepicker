@@ -18,6 +18,5 @@ export class AppComponent {
     })
 
     this.form.valueChanges.subscribe((value) => console.log('form value change!', value))
-    console.log(MAT_LUXON_DATE_FORMATS);
   }
 }

@@ -25,7 +25,7 @@ registerLocaleData(localeFr);
         BrowserModule,
         AppRoutingModule,
         MaterialModule,
-        MatMomentDateModule,
+        // MatMomentDateModule,
         MatLuxonDateModule,
         KlesMaterialDatepickerModule,
         // KlesMatMomentModule,
