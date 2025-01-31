@@ -4,7 +4,6 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { KlesMatDatepickerIntl, KlesMatMomentModule, KlesMaterialDatepickerModule, KlesMatLuxonModule } from 'kles-material-datepicker';
 import { MaterialModule } from './modules/material.module';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
@@ -17,19 +16,22 @@ import { DatepickerI18n } from './datepickerI18n';
 import { MatLuxonDateModule } from '@angular/material-luxon-adapter';
 registerLocaleData(localeFr);
 
-@NgModule({ declarations: [
+@NgModule({
+    declarations: [
         AppComponent,
     ],
-    exports: [KlesMaterialDatepickerModule],
-    bootstrap: [AppComponent], imports: [CommonModule,
+    exports: [],
+    bootstrap: [AppComponent],
+    imports: [
+        CommonModule,
         BrowserModule,
         AppRoutingModule,
         MaterialModule,
         // MatMomentDateModule,
-        MatLuxonDateModule,
-        KlesMaterialDatepickerModule,
+        // MatLuxonDateModule,
+        // KlesMaterialDatepickerModule,
         // KlesMatMomentModule,
-        KlesMatLuxonModule,
+        // KlesMatLuxonModule,
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
@@ -39,15 +41,21 @@ registerLocaleData(localeFr);
                 useFactory: (HttpLoaderFactory),
                 deps: [HttpClient]
             }
-        })], providers: [TranslateService, { provide: LOCALE_ID, useValue: 'fr-FR' },
-        {
+        })
+    ],
+    providers: [
+        TranslateService,
+        { provide: LOCALE_ID, useValue: 'fr-FR' },
+        /*{
             provide: KlesMatDatepickerIntl, deps: [TranslateService],
             useFactory: (translateService: TranslateService) => new DatepickerI18n(translateService).getDatepickerIntl()
-        }, provideHttpClient(withInterceptorsFromDi())] })
+        },*/
+        provideHttpClient(withInterceptorsFromDi())
+    ]
+})
 export class AppModule {
-
 }
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
