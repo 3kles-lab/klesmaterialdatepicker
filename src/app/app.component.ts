@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { MAT_LUXON_DATE_FORMATS } from '@angular/material-luxon-adapter';
 
 @Component({
   selector: 'app-root',
