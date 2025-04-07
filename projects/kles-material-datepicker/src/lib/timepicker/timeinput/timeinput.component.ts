@@ -20,6 +20,7 @@ export class TimeData {
         '[id]': 'id',
     },
     providers: [{ provide: MatFormFieldControl, useExisting: KlesTimeInput }],
+    standalone: false
 })
 export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<TimeData>, OnDestroy {
     static nextId = 0;

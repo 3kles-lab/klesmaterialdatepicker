@@ -28,6 +28,7 @@ const _MatDatepickerContentBase = mixinColor(
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     inputs: ['color'],
+    standalone: false
 })
 export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
     extends _MatDatepickerContentBase

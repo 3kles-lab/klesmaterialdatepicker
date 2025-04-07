@@ -14,6 +14,7 @@ import { KlesMatDatepickerControl } from './interfaces/datepicker.interface';
         MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER,
         { provide: KlesMatDatepickerBase, useExisting: KlesMatDatepicker },
     ],
+    standalone: false
 })
 export class KlesMatDatepicker<D> extends KlesMatDatepickerBase<KlesMatDatepickerControl<D>, D | null, D> {
 

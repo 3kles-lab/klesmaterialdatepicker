@@ -10,7 +10,8 @@ import { KlesMatDateAdapter } from "../adapters/date-adapter";
     selector: 'kles-time-picker',
     templateUrl: 'timepicker.component.html',
     styleUrls: ['timepicker.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class KlesTimePicker implements OnInit, OnDestroy {
 
