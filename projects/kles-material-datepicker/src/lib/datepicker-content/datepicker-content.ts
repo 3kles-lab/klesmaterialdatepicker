@@ -1,17 +1,10 @@
 import { DateRange, ExtractDateTypeFromSelection, MAT_DATE_RANGE_SELECTION_STRATEGY, MatCalendar, MatCalendarUserEvent, MatDateRangeSelectionStrategy, MatDateSelectionModel, MatDatepickerIntl, matDatepickerAnimations } from "@angular/material/datepicker";
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, OnInit, Optional, ViewChild, ViewEncapsulation } from '@angular/core';
-import { CanColor, DateAdapter, mixinColor } from "@angular/material/core";
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Inject, Input, OnDestroy, OnInit, Optional, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ThemePalette } from "@angular/material/core";
 import { Subject, Subscription } from "rxjs";
 import { TemplatePortal } from "@angular/cdk/portal";
 import { KlesMatDateAdapter } from "../adapters/date-adapter";
 import { KlesMatDatepickerIntl } from "../datepicker-intl/datepicker-intl";
-
-const _MatDatepickerContentBase = mixinColor(
-    class {
-        constructor(public _elementRef: ElementRef) { }
-    },
-);
-
 
 @Component({
     selector: 'mat-datepicker-content',
@@ -31,10 +24,11 @@ const _MatDatepickerContentBase = mixinColor(
     standalone: false
 })
 export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
-    extends _MatDatepickerContentBase
-    implements OnInit, AfterViewInit, OnDestroy, CanColor {
+    implements OnInit, AfterViewInit, OnDestroy {
     private _subscriptions = new Subscription();
     _model: MatDateSelectionModel<S, D>;
+
+    @Input() color: ThemePalette;
 
     calendarValue: D;
     timeValue: any;
@@ -84,7 +78,6 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
         private _rangeSelectionStrategy: MatDateRangeSelectionStrategy<D>,
         intl: KlesMatDatepickerIntl,
     ) {
-        super(elementRef);
         this._cancelButtonText = intl.cancelCalendarLabel;
         this._validateButtonText = intl.validateCalendarLabel;
     }
