@@ -152,7 +152,8 @@ $mat-dark-theme-background: (
 //  you can delete this line and instead use:
 //    `@include mat.legacy-typography-hierarchy($fontConfig);`
 @include mat.all-component-typographies($fontConfig);
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 // Theme Config
 
