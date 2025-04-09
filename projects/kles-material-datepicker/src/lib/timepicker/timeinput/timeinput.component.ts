@@ -3,7 +3,6 @@ import { BooleanInput, coerceBooleanProperty } from "@angular/cdk/coercion";
 import { Component, ElementRef, Inject, Input, OnDestroy, Optional, Self, ViewChild } from "@angular/core";
 import { AbstractControl, ControlValueAccessor, FormBuilder, FormControl, FormGroup, NgControl, Validators } from "@angular/forms";
 import { MAT_FORM_FIELD, MatFormField, MatFormFieldControl } from "@angular/material/form-field";
-import { min } from "moment";
 import { Subject } from "rxjs";
 
 export class TimeData {
