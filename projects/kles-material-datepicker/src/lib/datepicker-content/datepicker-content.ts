@@ -1,5 +1,5 @@
 import { DateRange, ExtractDateTypeFromSelection, MAT_DATE_RANGE_SELECTION_STRATEGY, MatCalendar, MatCalendarUserEvent, MatDateRangeSelectionStrategy, MatDateSelectionModel, MatDatepickerIntl, matDatepickerAnimations } from "@angular/material/datepicker";
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Inject, Input, OnDestroy, OnInit, Optional, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, Inject, Input, OnDestroy, OnInit, Optional, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ThemePalette } from "@angular/material/core";
 import { Subject, Subscription } from "rxjs";
 import { TemplatePortal } from "@angular/cdk/portal";
@@ -29,6 +29,11 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
     _model: MatDateSelectionModel<S, D>;
 
     @Input() color: ThemePalette;
+
+    @HostBinding('class')
+    get colorClass(): string {
+        return this.color ? `mat-${this.color}` : '';
+    }
 
     calendarValue: D;
     timeValue: any;
