@@ -13,9 +13,9 @@
   },
   "private": true,
   "dependencies": {
-    "@3kles/kles-material-datepicker": "18.0.2",
-    "@3kles/kles-material-moment-adapter": "18.0.0",
-    "@3kles/kles-material-luxon-adapter": "18.0.0",
+    "@3kles/kles-material-datepicker": "19.0.0",
+    "@3kles/kles-material-moment-adapter": "19.0.0",
+    "@3kles/kles-material-luxon-adapter": "19.0.0",
     "@angular/animations": "^19.2.5",
     "@angular/cdk": "^19.2.8",
     "@angular/common": "^19.2.5",
