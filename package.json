@@ -1,9 +1,9 @@
 {
   "name": "@3kles/kles-material-datepicker",
-  "version": "19.0.1",
+  "version": "19.0.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/3kles-lab/kles-material-datepicker"
+    "url": "https://github.com/3kles-lab/klesmaterialdatepicker"
   },
   "keywords": [
     "3KLES",
@@ -13,9 +13,9 @@
   "author": "3Kles Lab",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/3kles-lab/kles-material-datepicker/issues"
+    "url": "https://github.com/3kles-lab/klesmaterialdatepicker/issues"
   },
-  "homepage": "https://github.com/3kles-lab/kles-material-datepicker",
+  "homepage": "https://github.com/3kles-lab/klesmaterialdatepicker",
   "scripts": {
     "build:lib": "ng build kles-material-datepicker --configuration production",
     "publish:lib": "cd dist/kles-material-datepicker && npm publish --registry 'http://192.168.111.61:8081/repository/npm-3kles/'  --force",
