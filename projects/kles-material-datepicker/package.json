@@ -1,6 +1,21 @@
 {
   "name": "@3kles/kles-material-datepicker",
-  "version": "19.0.0",
+  "version": "19.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3kles-lab/kles-material-datepicker"
+  },
+  "keywords": [
+    "3KLES",
+    "Material",
+    "Angular"
+  ],
+  "author": "3Kles Lab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3kles-lab/kles-material-datepicker/issues"
+  },
+  "homepage": "https://github.com/3kles-lab/kles-material-datepicker",
   "peerDependencies": {
     "@angular/animations": "^19.2.5",
     "@angular/cdk": "^19.2.8",
