@@ -1,6 +1,6 @@
 {
   "name": "@3kles/kles-material-datepicker",
-  "version": "19.0.2",
+  "version": "19.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/3kles-lab/klesmaterialdatepicker"
@@ -29,8 +29,6 @@
   "private": true,
   "dependencies": {
     "@3kles/kles-material-datepicker": "19.0.0",
-    "@3kles/kles-material-moment-adapter": "19.0.0",
-    "@3kles/kles-material-luxon-adapter": "19.0.0",
     "@angular/animations": "^19.2.5",
     "@angular/cdk": "^19.2.8",
     "@angular/common": "^19.2.5",
@@ -56,7 +54,6 @@
     "@angular/language-service": "^19.2.5",
     "@types/jasmine": "~4.3.4",
     "@types/jasminewd2": "~2.0.11",
-    "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~5.1.1",
     "jasmine-spec-reporter": "~7.0.0",

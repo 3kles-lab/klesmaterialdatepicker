@@ -1,17 +1,19 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { DateAdapter } from "@angular/material/core";
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Subject } from "rxjs";
 import { filter, takeUntil } from "rxjs/operators";
 import { KlesMatDatepickerIntl } from "../datepicker-intl/datepicker-intl";
 import { KlesMatDateAdapter } from "../adapters/date-adapter";
+import { MaterialModule } from "../modules/material.module";
+import { CommonModule } from "@angular/common";
 
 @Component({
     selector: 'kles-time-picker',
     templateUrl: 'timepicker.component.html',
     styleUrls: ['timepicker.component.scss'],
+    imports: [MaterialModule, CommonModule, ReactiveFormsModule, FormsModule],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    standalone: true,
 })
 export class KlesTimePicker implements OnInit, OnDestroy {
 

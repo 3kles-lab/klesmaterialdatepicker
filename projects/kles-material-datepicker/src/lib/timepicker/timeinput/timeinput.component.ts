@@ -1,14 +1,14 @@
-import { FocusMonitor } from "@angular/cdk/a11y";
-import { BooleanInput, coerceBooleanProperty } from "@angular/cdk/coercion";
-import { Component, ElementRef, Inject, Input, OnDestroy, Optional, Self, ViewChild } from "@angular/core";
-import { AbstractControl, ControlValueAccessor, FormBuilder, FormControl, FormGroup, NgControl, Validators } from "@angular/forms";
-import { MAT_FORM_FIELD, MatFormField, MatFormFieldControl } from "@angular/material/form-field";
-import { Subject } from "rxjs";
+import { FocusMonitor } from '@angular/cdk/a11y';
+import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
+import { CommonModule } from '@angular/common';
+import { Component, ElementRef, Inject, Input, OnDestroy, Optional, Self, ViewChild } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, FormBuilder, FormControl, FormGroup, FormsModule, NgControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MAT_FORM_FIELD, MatFormField, MatFormFieldControl } from '@angular/material/form-field';
+import { Subject } from 'rxjs';
 
 export class TimeData {
-    constructor(public hour: string, public minute: string) { }
+    constructor(public hour: string, public minute: string) {}
 }
-
 
 @Component({
     selector: 'kles-time-input',
@@ -19,7 +19,8 @@ export class TimeData {
         '[id]': 'id',
     },
     providers: [{ provide: MatFormFieldControl, useExisting: KlesTimeInput }],
-    standalone: false
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, CommonModule],
 })
 export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<TimeData>, OnDestroy {
     static nextId = 0;
@@ -35,8 +36,8 @@ export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<
     touched = false;
     controlType = 'kles-time-input';
     id = `kles-time-input-${KlesTimeInput.nextId++}`;
-    onChange = (_: any) => { };
-    onTouched = () => { };
+    onChange = (_: any) => {};
+    onTouched = () => {};
 
     get empty() {
         const {
@@ -103,13 +104,7 @@ export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<
         return this.parts.invalid && this.touched;
     }
 
-    constructor(
-        formBuilder: FormBuilder,
-        private _focusMonitor: FocusMonitor,
-        private _elementRef: ElementRef<HTMLElement>,
-        @Optional() @Inject(MAT_FORM_FIELD) public _formField: MatFormField,
-        @Optional() @Self() public ngControl: NgControl,
-    ) {
+    constructor(formBuilder: FormBuilder, private _focusMonitor: FocusMonitor, private _elementRef: ElementRef<HTMLElement>, @Optional() @Inject(MAT_FORM_FIELD) public _formField: MatFormField, @Optional() @Self() public ngControl: NgControl) {
         if (this.ngControl != null) {
             this.ngControl.valueAccessor = this;
         }
@@ -119,7 +114,7 @@ export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<
             minute: [null as string, [Validators.required]],
         });
 
-        _focusMonitor.monitor(_elementRef, true).subscribe(origin => {
+        _focusMonitor.monitor(_elementRef, true).subscribe((origin) => {
             if (this.focused && !origin) {
                 this.onTouched();
             }
@@ -156,9 +151,7 @@ export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<
     }
 
     setDescribedByIds(ids: string[]) {
-        const controlElement = this._elementRef.nativeElement.querySelector(
-            '.kles-time-input-container',
-        )!;
+        const controlElement = this._elementRef.nativeElement.querySelector('.kles-time-input-container')!;
         controlElement.setAttribute('aria-describedby', ids.join(' '));
     }
 
@@ -191,7 +184,6 @@ export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<
         this.disabled = isDisabled;
     }
 
-
     _handleInputHour(hour: AbstractControl, nextElement?: HTMLInputElement) {
         if (hour !== null && typeof hour !== 'undefined' && hour.value !== null && typeof hour.value !== 'undefined' && hour.value !== '') {
             if (isNaN(hour.value)) {
@@ -220,5 +212,4 @@ export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<
         }
         this.onChange(this.parts.value);
     }
-
 }

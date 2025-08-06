@@ -1,30 +1,42 @@
-import { DateRange, ExtractDateTypeFromSelection, MAT_DATE_RANGE_SELECTION_STRATEGY, MatCalendar, MatCalendarUserEvent, MatDateRangeSelectionStrategy, MatDateSelectionModel, MatDatepickerIntl, matDatepickerAnimations } from "@angular/material/datepicker";
+import {
+    DateRange,
+    ExtractDateTypeFromSelection,
+    MAT_DATE_RANGE_SELECTION_STRATEGY,
+    MatCalendar,
+    MatCalendarUserEvent,
+    MatDateRangeSelectionStrategy,
+    MatDateSelectionModel,
+    MatDatepickerIntl,
+    matDatepickerAnimations,
+} from '@angular/material/datepicker';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, Inject, Input, OnDestroy, OnInit, Optional, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ThemePalette } from "@angular/material/core";
-import { Subject, Subscription } from "rxjs";
-import { TemplatePortal } from "@angular/cdk/portal";
-import { KlesMatDateAdapter } from "../adapters/date-adapter";
-import { KlesMatDatepickerIntl } from "../datepicker-intl/datepicker-intl";
+import { ThemePalette } from '@angular/material/core';
+import { Subject, Subscription } from 'rxjs';
+import { TemplatePortal } from '@angular/cdk/portal';
+import { KlesMatDateAdapter } from '../adapters/date-adapter';
+import { KlesMatDatepickerIntl } from '../datepicker-intl/datepicker-intl';
+import { CommonModule } from '@angular/common';
+import { MaterialModule } from '../modules/material.module';
+import { KlesTimePicker } from '../timepicker/timepicker.component';
 
 @Component({
     selector: 'mat-datepicker-content',
     templateUrl: 'datepicker-content.html',
     styleUrls: ['datepicker-content.scss'],
     host: {
-        'class': 'mat-datepicker-content',
+        class: 'mat-datepicker-content',
         '[@transformPanel]': '_animationState',
         '(@transformPanel.done)': '_animationDone.next()',
         '[class.mat-datepicker-content-touch]': 'datepicker.touchUi',
     },
-    animations: [matDatepickerAnimations.transformPanel, matDatepickerAnimations.fadeInCalendar],
     exportAs: 'klesMatDatepickerContent',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [CommonModule, MaterialModule, KlesTimePicker],
     inputs: ['color'],
-    standalone: false
+    standalone: true,
 })
-export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
-    implements OnInit, AfterViewInit, OnDestroy {
+export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> implements OnInit, AfterViewInit, OnDestroy {
     private _subscriptions = new Subscription();
     _model: MatDateSelectionModel<S, D>;
 
@@ -93,7 +105,7 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
             minute: this._model.selection ? this._dateAdapter.getMinute(this._model.selection as any) : null,
             hour: this._model.selection ? this._dateAdapter.getHour(this._model.selection as any) : null,
             second: this._model.selection ? this._dateAdapter.getSecond(this._model.selection as any) : null,
-        }
+        };
 
         this._animationState = this.datepicker.touchUi ? 'enter-dialog' : 'enter-dropdown';
     }
@@ -128,7 +140,7 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
             this._model.add(this.calendarValue);
         }
 
-        this.datepicker.close()
+        this.datepicker.close();
     }
 
     _startExitAnimation() {
