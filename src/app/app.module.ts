@@ -11,7 +11,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import localeFr from '@angular/common/locales/fr';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { KlesMaterialDatepickerModule } from '@3kles/kles-material-datepicker';
+
 
 
 registerLocaleData(localeFr);
@@ -27,7 +27,6 @@ registerLocaleData(localeFr);
         BrowserModule,
         AppRoutingModule,
         MaterialModule,
-        KlesMaterialDatepickerModule,
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
