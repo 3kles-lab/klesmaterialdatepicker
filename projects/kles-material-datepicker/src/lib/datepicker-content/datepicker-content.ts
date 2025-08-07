@@ -6,8 +6,6 @@ import {
     MatCalendarUserEvent,
     MatDateRangeSelectionStrategy,
     MatDateSelectionModel,
-    MatDatepickerIntl,
-    matDatepickerAnimations,
 } from '@angular/material/datepicker';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, Inject, Input, OnDestroy, OnInit, Optional, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
@@ -25,8 +23,6 @@ import { KlesTimePicker } from '../timepicker/timepicker.component';
     styleUrls: ['datepicker-content.scss'],
     host: {
         class: 'mat-datepicker-content',
-        '[@transformPanel]': '_animationState',
-        '(@transformPanel.done)': '_animationDone.next()',
         '[class.mat-datepicker-content-touch]': 'datepicker.touchUi',
     },
     exportAs: 'klesMatDatepickerContent',
