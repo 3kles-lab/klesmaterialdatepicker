@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
-import { MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER } from '@angular/material/datepicker';
+import { MatDateSelectionModel, MatSingleDateSelectionModel } from '@angular/material/datepicker';
 import { KlesMatDatepickerBase } from './directives/datepicker.directive';
 import { KlesMatDatepickerControl } from './interfaces/datepicker.interface';
 import { MaterialModule } from './modules/material.module';
@@ -11,7 +11,10 @@ import { CommonModule } from '@angular/common';
     exportAs: 'klesMatDatepicker',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
-    providers: [MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER, { provide: KlesMatDatepickerBase, useExisting: KlesMatDatepicker }],
+    providers: [
+        { provide: MatDateSelectionModel, useClass: MatSingleDateSelectionModel },
+        { provide: KlesMatDatepickerBase, useExisting: KlesMatDatepicker }
+    ],
     imports: [CommonModule, MaterialModule],
     standalone: true,
 })

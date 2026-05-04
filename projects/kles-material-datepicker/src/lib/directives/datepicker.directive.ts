@@ -331,25 +331,21 @@ export abstract class KlesMatDatepickerBase<
         };
 
         if (this._componentRef) {
-            const { instance, location } = this._componentRef;
-            instance._startExitAnimation();
-            instance._animationDone.pipe(take(1)).subscribe(() => {
-                const activeElement = this._document.activeElement;
+            const { location } = this._componentRef;
+            const activeElement = this._document.activeElement;
 
-                // Since we restore focus after the exit animation, we have to check that
-                // the user didn't move focus themselves inside the `close` handler.
-                if (
-                    canRestoreFocus &&
-                    (!activeElement ||
-                        activeElement === this._document.activeElement ||
-                        location.nativeElement.contains(activeElement))
-                ) {
-                    this._focusedElementBeforeOpen!.focus();
-                }
+            if (
+                canRestoreFocus &&
+                (!activeElement ||
+                    activeElement === this._document.activeElement ||
+                    location.nativeElement.contains(activeElement))
+            ) {
+                this._focusedElementBeforeOpen!.focus();
+            }
 
-                this._focusedElementBeforeOpen = null;
-                this._destroyOverlay();
-            });
+            this._focusedElementBeforeOpen = null;
+
+            this._destroyOverlay();
         }
 
         if (canRestoreFocus) {

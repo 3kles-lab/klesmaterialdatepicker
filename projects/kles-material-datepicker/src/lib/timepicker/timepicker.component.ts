@@ -6,12 +6,13 @@ import { KlesMatDatepickerIntl } from "../datepicker-intl/datepicker-intl";
 import { KlesMatDateAdapter } from "../adapters/date-adapter";
 import { MaterialModule } from "../modules/material.module";
 import { CommonModule } from "@angular/common";
+import { KlesTimeInput } from "./timeinput/timeinput.component";
 
 @Component({
     selector: 'kles-time-picker',
     templateUrl: 'timepicker.component.html',
     styleUrls: ['timepicker.component.scss'],
-    imports: [MaterialModule, CommonModule, ReactiveFormsModule, FormsModule],
+    imports: [MaterialModule, CommonModule, ReactiveFormsModule, FormsModule, KlesTimeInput],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
 })

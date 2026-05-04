@@ -9,7 +9,7 @@ import {
 } from '@angular/material/datepicker';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, Inject, Input, OnDestroy, OnInit, Optional, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { TemplatePortal } from '@angular/cdk/portal';
 import { KlesMatDateAdapter } from '../adapters/date-adapter';
 import { KlesMatDatepickerIntl } from '../datepicker-intl/datepicker-intl';
@@ -30,7 +30,7 @@ import { KlesTimePicker } from '../timepicker/timepicker.component';
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [CommonModule, MaterialModule, KlesTimePicker],
     inputs: ['color'],
-    standalone: true,
+    standalone: true
 })
 export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> implements OnInit, AfterViewInit, OnDestroy {
     private _subscriptions = new Subscription();
@@ -60,12 +60,6 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> im
 
     /** Whether the datepicker is above or below the input. */
     _isAbove: boolean;
-
-    /** Current state of the animation. */
-    _animationState: 'enter-dropdown' | 'enter-dialog' | 'void';
-
-    /** Emits when an animation has finished. */
-    readonly _animationDone = new Subject<void>();
 
     /** Text for the close button. */
     // _closeButtonText: string;
@@ -102,8 +96,6 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> im
             hour: this._model.selection ? this._dateAdapter.getHour(this._model.selection as any) : null,
             second: this._model.selection ? this._dateAdapter.getSecond(this._model.selection as any) : null,
         };
-
-        this._animationState = this.datepicker.touchUi ? 'enter-dialog' : 'enter-dropdown';
     }
 
     ngAfterViewInit() {
@@ -117,7 +109,6 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> im
 
     ngOnDestroy() {
         this._subscriptions.unsubscribe();
-        this._animationDone.complete();
     }
 
     _handleUserSelection(event: MatCalendarUserEvent<D | null>) {
@@ -137,11 +128,6 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> im
         }
 
         this.datepicker.close();
-    }
-
-    _startExitAnimation() {
-        this._animationState = 'void';
-        this._changeDetectorRef.markForCheck();
     }
 
     _getSelected() {
