@@ -23,10 +23,10 @@ $touch-max-height: 788px;
 .mat-datepicker-content {
     display: block;
     border-radius: 4px;
-    background-color: var(--mat-datepicker-calendar-container-background-color);
-    color: var(--mat-datepicker-calendar-container-text-color);
-    box-shadow: var(--mat-datepicker-calendar-container-elevation-shadow);
-    border-radius: var(--mat-datepicker-calendar-container-shape);
+    background-color: var(--mat-datepicker-calendar-container-background-color, var(--mat-sys-surface-container-high));
+    color: var(--mat-datepicker-calendar-container-text-color, var(--mat-sys-on-surface));
+    box-shadow: var(--mat-datepicker-calendar-container-elevation-shadow, 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12));
+    border-radius: var(--mat-datepicker-calendar-container-shape, var(--mat-sys-corner-large));
 
     .mat-calendar {
         width: $non-touch-calendar-width;
