@@ -6,7 +6,7 @@ import { MAT_FORM_FIELD, MatFormField, MatFormFieldControl } from '@angular/mate
 import { Subject } from 'rxjs';
 
 export class TimeData {
-    constructor(public hour: string, public minute: string) {}
+    constructor(public hour: string | null, public minute: string | null) {}
 }
 
 @Component({
@@ -24,8 +24,8 @@ export class TimeData {
 })
 export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<TimeData>, OnDestroy {
     static nextId = 0;
-    @ViewChild('hour') hourInput: HTMLInputElement;
-    @ViewChild('minute') minuteInput: HTMLInputElement;
+    @ViewChild('hour') hourInput!: HTMLInputElement;
+    @ViewChild('minute') minuteInput!: HTMLInputElement;
 
     parts: FormGroup<{
         hour: FormControl<string | null>;
@@ -51,7 +51,7 @@ export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<
         return this.focused || !this.empty;
     }
 
-    @Input('aria-describedby') userAriaDescribedBy: string;
+    @Input('aria-describedby') userAriaDescribedBy!: string;
 
     @Input()
     get placeholder(): string {
@@ -61,7 +61,7 @@ export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<
         this._placeholder = value;
         this.stateChanges.next();
     }
-    private _placeholder: string;
+    private _placeholder: string = '';
 
     @Input()
     get required(): boolean {
@@ -110,8 +110,8 @@ export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<
         }
 
         this.parts = formBuilder.group({
-            hour: [null as string, [Validators.required]],
-            minute: [null as string, [Validators.required]],
+            hour: formBuilder.control<string | null>(null, Validators.required),
+            minute: formBuilder.control<string | null>(null, Validators.required),
         });
 
         _focusMonitor.monitor(_elementRef, true).subscribe((origin) => {

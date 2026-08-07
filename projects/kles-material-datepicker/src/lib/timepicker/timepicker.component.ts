@@ -20,10 +20,10 @@ export class KlesTimePicker implements OnInit, OnDestroy {
 
     _timePickerTextLabel: string;
     private _onDestroy = new Subject<void>()
-    form: FormGroup;
+    form!: FormGroup;
 
     @Output() timeChanged = new EventEmitter<any>();
-    @Input() value: {
+    @Input() value!: {
         hour: string;
         minute: string;
         second?: string;

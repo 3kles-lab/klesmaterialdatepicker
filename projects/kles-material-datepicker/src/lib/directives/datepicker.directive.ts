@@ -36,7 +36,7 @@ export abstract class KlesMatDatepickerBase<
     private _document = inject(DOCUMENT);
 
     /** An input indicating the type of the custom header component for the calendar, if set. */
-    @Input() calendarHeaderComponent: ComponentType<any>;
+    @Input() calendarHeaderComponent!: ComponentType<any>;
     @Input() hasBackdrop!: boolean;
 
     /** The date to open the calendar to initially. */
@@ -49,7 +49,7 @@ export abstract class KlesMatDatepickerBase<
     set startAt(value: D | null) {
         this._startAt = this._dateAdapter.getValidDateOrNull(this._dateAdapter.deserialize(value));
     }
-    private _startAt: D | null;
+    private _startAt: D | null = null;
 
     /** The view that the calendar should start in. */
     @Input() startView: 'month' | 'year' | 'multi-year' = 'month';
@@ -82,7 +82,7 @@ export abstract class KlesMatDatepickerBase<
     /** Whether the datepicker pop-up should be disabled. */
     @Input()
     get disabled(): boolean {
-        return this._disabled === undefined && this.datepickerInput
+        return this.datepickerInput
             ? this.datepickerInput.disabled
             : !!this._disabled;
     }
@@ -94,7 +94,7 @@ export abstract class KlesMatDatepickerBase<
             this.stateChanges.next(undefined);
         }
     }
-    private _disabled: boolean;
+    private _disabled: boolean = false;
 
     /** Preferred position of the datepicker in the X axis. */
     @Input()
@@ -138,7 +138,7 @@ export abstract class KlesMatDatepickerBase<
     );
 
     /** Function that can be used to add custom CSS classes to dates. */
-    @Input() dateClass: MatCalendarCellClassFunction<D>;
+    @Input() dateClass!: MatCalendarCellClassFunction<D>;
 
     /** Emits when the datepicker has been opened. */
     @Output('opened') readonly openedStream = new EventEmitter<void>();
@@ -157,7 +157,7 @@ export abstract class KlesMatDatepickerBase<
     set panelClass(value: string | string[]) {
         this._panelClass = coerceStringArray(value);
     }
-    private _panelClass: string[];
+    private _panelClass: string[] = [];
 
     /** Whether the calendar is open. */
     @Input()
@@ -187,10 +187,10 @@ export abstract class KlesMatDatepickerBase<
     }
 
     /** A reference to the overlay into which we've rendered the calendar. */
-    private _overlayRef: OverlayRef | null;
+    private _overlayRef: OverlayRef | null = null;
 
     /** Reference to the component instance rendered in the overlay. */
-    private _componentRef: ComponentRef<KlesMatDatepickerContent<S, D>> | null;
+    private _componentRef: ComponentRef<KlesMatDatepickerContent<S, D>> | null = null;
 
     /** The element that was focused before the datepicker was opened. */
     private _focusedElementBeforeOpen: HTMLElement | null = null;
@@ -199,10 +199,10 @@ export abstract class KlesMatDatepickerBase<
     private _backdropHarnessClass = `${this.id}-backdrop`;
 
     /** Currently-registered actions portal. */
-    private _actionsPortal: TemplatePortal | null;
+    private _actionsPortal: TemplatePortal | null = null;
 
     /** The input element this datepicker is associated with. */
-    datepickerInput: C;
+    datepickerInput: C | null = null;
 
     /** Emits when the datepicker's state changes. */
     readonly stateChanges = new Subject<void>();

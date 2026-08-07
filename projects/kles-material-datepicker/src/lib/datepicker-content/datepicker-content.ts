@@ -34,7 +34,7 @@ import { KlesTimePicker } from '../timepicker/timepicker.component';
 })
 export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> implements OnInit, AfterViewInit, OnDestroy {
     private _subscriptions = new Subscription();
-    _model: MatDateSelectionModel<S, D>;
+    _model!: MatDateSelectionModel<S, D>;
 
     @Input() color: ThemePalette;
 
@@ -43,23 +43,23 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> im
         return this.color ? `mat-${this.color}` : '';
     }
 
-    calendarValue: D;
+    calendarValue: D | null;
     timeValue: any;
 
     /** Reference to the internal calendar component. */
-    @ViewChild(MatCalendar) _calendar: MatCalendar<D>;
+    @ViewChild(MatCalendar) _calendar!: MatCalendar<D>;
 
     /** Reference to the datepicker that created the overlay. */
     datepicker: any;
 
     /** Start of the comparison range. */
-    comparisonStart: D | null;
+    comparisonStart: D | null = null;
 
     /** End of the comparison range. */
-    comparisonEnd: D | null;
+    comparisonEnd: D | null = null;
 
     /** Whether the datepicker is above or below the input. */
-    _isAbove: boolean;
+    _isAbove!: boolean;
 
     /** Text for the close button. */
     // _closeButtonText: string;
@@ -67,13 +67,13 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> im
     _validateButtonText: string;
 
     /** Whether the close button currently has focus. */
-    _closeButtonFocused: boolean;
+    _closeButtonFocused!: boolean;
 
     /** Portal with projected action buttons. */
     _actionsPortal: TemplatePortal | null = null;
 
     /** Id of the label for the `role="dialog"` element. */
-    _dialogLabelId: string | null;
+    _dialogLabelId: string | null = null;
 
     constructor(
         elementRef: ElementRef,
