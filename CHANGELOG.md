@@ -1,3 +1,22 @@
+# [22.0.0](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/compare/v21.0.0...v22.0.0) (2026-08-07)
+
+
+* feat!: Update to Angular 22 ([6f0dc97](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/commit/6f0dc97277300096c9cbf786df46b987b7ccc67b))
+* feat!: Update to Angular 22 ([f9cd4b2](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/commit/f9cd4b2de47f0c15a40d0aad7c61c256f97b811a))
+
+
+### Bug Fixes
+
+* Build ([55fece5](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/commit/55fece5f935f6068039a77bac6677de0fd4af9d6))
+* Properties initializer ([6368739](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/commit/63687390aeac281423f12a40e19cccc2412dbd54))
+* Properties initializer ([079b976](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/commit/079b97616806cc682bf06799a97c0e4e89a2f280))
+
+
+### BREAKING CHANGES
+
+* Angular 22 is now required
+* Angular 22 is now required
+
 # [21.0.0](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/compare/v20.0.0...v21.0.0) (2026-08-07)
 
 
