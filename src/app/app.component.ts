@@ -9,6 +9,8 @@ import { LuxonDateAdapter } from '@angular/material-luxon-adapter';
 import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DatepickerI18n } from './datepickerI18n';
+import { KLES_MAT_MOMENT_FORMATS, KlesMatMomentAdapter } from '@3kles/kles-material-moment-adapter';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
 @Component({
     selector: 'app-root',
@@ -30,6 +32,9 @@ import { DatepickerI18n } from './datepickerI18n';
         { provide: KlesMatDateAdapter, useClass: KlesMatLuxonAdapter },
         { provide: DateAdapter, useClass: LuxonDateAdapter },
         { provide: MAT_DATE_FORMATS, useValue: KLES_MAT_LUXON_FORMATS },
+        // { provide: KlesMatDateAdapter, useClass: KlesMatMomentAdapter },
+        // { provide: DateAdapter, useClass: MomentDateAdapter },
+        // { provide: MAT_DATE_FORMATS, useValue: KLES_MAT_MOMENT_FORMATS },
         {
             provide: KlesMatDatepickerIntl, deps: [TranslateService],
             useFactory: (translateService: TranslateService) => new DatepickerI18n(translateService).getDatepickerIntl()
