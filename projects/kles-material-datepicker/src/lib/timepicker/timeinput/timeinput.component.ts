@@ -1,6 +1,5 @@
 import { FocusMonitor } from '@angular/cdk/a11y';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
-import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Inject, Input, OnDestroy, Optional, Self, ViewChild } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, FormBuilder, FormControl, FormGroup, FormsModule, NgControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_FORM_FIELD, MatFormField, MatFormFieldControl } from '@angular/material/form-field';
@@ -20,7 +19,7 @@ export class TimeData {
     },
     providers: [{ provide: MatFormFieldControl, useExisting: KlesTimeInput }],
     standalone: true,
-    imports: [FormsModule, ReactiveFormsModule, CommonModule],
+    imports: [FormsModule, ReactiveFormsModule],
 })
 export class KlesTimeInput implements ControlValueAccessor, MatFormFieldControl<TimeData>, OnDestroy {
     static nextId = 0;

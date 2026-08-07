@@ -3,7 +3,6 @@ import { MatDateSelectionModel, MatSingleDateSelectionModel } from '@angular/mat
 import { KlesMatDatepickerBase } from './directives/datepicker.directive';
 import { KlesMatDatepickerControl } from './interfaces/datepicker.interface';
 import { MaterialModule } from './modules/material.module';
-import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'kles-mat-datepicker',
@@ -15,7 +14,7 @@ import { CommonModule } from '@angular/common';
         { provide: MatDateSelectionModel, useClass: MatSingleDateSelectionModel },
         { provide: KlesMatDatepickerBase, useExisting: KlesMatDatepicker }
     ],
-    imports: [CommonModule, MaterialModule],
+    imports: [MaterialModule],
     standalone: true,
 })
 export class KlesMatDatepicker<D> extends KlesMatDatepickerBase<KlesMatDatepickerControl<D>, D | null, D> {

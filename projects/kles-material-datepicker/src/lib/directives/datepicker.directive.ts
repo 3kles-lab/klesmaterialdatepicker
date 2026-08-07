@@ -3,8 +3,7 @@ import { BooleanInput, coerceBooleanProperty, coerceStringArray } from "@angular
 import { ScrollStrategy, OverlayRef, Overlay, FlexibleConnectedPositionStrategy, OverlayConfig } from "@angular/cdk/overlay";
 import { _getFocusedElementPierceShadowDom } from "@angular/cdk/platform";
 import { ComponentType, TemplatePortal, ComponentPortal } from "@angular/cdk/portal";
-import { DOCUMENT } from "@angular/common";
-import { Directive, OnDestroy, OnChanges, inject, Input, Output, ComponentRef, NgZone, ViewContainerRef, Inject, Optional, SimpleChanges, EventEmitter } from "@angular/core";
+import { Directive, OnDestroy, OnChanges, inject, Input, Output, ComponentRef, NgZone, ViewContainerRef, Inject, Optional, SimpleChanges, EventEmitter, DOCUMENT } from "@angular/core";
 import { ThemePalette, DateAdapter } from "@angular/material/core";
 import { ExtractDateTypeFromSelection, DatepickerDropdownPositionX, DatepickerDropdownPositionY, MatCalendarView, MatCalendarCellClassFunction, DateFilterFn, MAT_DATEPICKER_SCROLL_STRATEGY, MatDateSelectionModel } from "@angular/material/datepicker";
 import { Subscription, Subject, merge } from "rxjs";
