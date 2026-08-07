@@ -1,36 +1,36 @@
 {
-    "name": "@3kles/kles-material-datepicker",
-    "version": "21.0.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/3kles-lab/klesmaterialdatepicker"
-    },
-    "keywords": [
-        "3KLES",
-        "Material",
-        "Angular"
-    ],
-    "author": "3Kles Lab",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/3kles-lab/klesmaterialdatepicker/issues"
-    },
-    "homepage": "https://github.com/3kles-lab/klesmaterialdatepicker",
-    "peerDependencies": {
-        "@angular/animations": "^21.2.19",
-        "@angular/cdk": "^21.2.14",
-        "@angular/common": "^21.2.19",
-        "@angular/compiler": "^21.2.19",
-        "@angular/core": "^21.2.19",
-        "@angular/forms": "^21.2.19",
-        "@angular/material": "^21.2.14",
-        "@angular/platform-browser": "^21.2.19",
-        "@angular/platform-browser-dynamic": "^21.2.19",
-        "@angular/router": "^21.2.19",
-        "rxjs": "^7.8.0",
-        "zone.js": "~0.15.0"
-    },
-    "dependencies": {
-        "tslib": "^2.0.0"
-    }
+  "name": "@3kles/kles-material-datepicker",
+  "version": "21.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3kles-lab/klesmaterialdatepicker"
+  },
+  "keywords": [
+    "3KLES",
+    "Material",
+    "Angular"
+  ],
+  "author": "3Kles Lab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3kles-lab/klesmaterialdatepicker/issues"
+  },
+  "homepage": "https://github.com/3kles-lab/klesmaterialdatepicker",
+  "peerDependencies": {
+    "@angular/animations": "^22.1.0",
+    "@angular/cdk": "^22.1.1",
+    "@angular/common": "^22.1.0",
+    "@angular/compiler": "^22.1.0",
+    "@angular/core": "^22.1.0",
+    "@angular/forms": "^22.1.0",
+    "@angular/material": "^22.1.1",
+    "@angular/platform-browser": "^22.1.0",
+    "@angular/platform-browser-dynamic": "^22.1.0",
+    "@angular/router": "^22.1.0",
+    "rxjs": "^7.8.0",
+    "zone.js": "~0.15.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
 }
