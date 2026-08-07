@@ -202,7 +202,7 @@ export abstract class KlesMatDatepickerBase<
     private _actionsPortal: TemplatePortal | null = null;
 
     /** The input element this datepicker is associated with. */
-    datepickerInput: C | null = null;
+    datepickerInput!: C;
 
     /** Emits when the datepicker's state changes. */
     readonly stateChanges = new Subject<void>();

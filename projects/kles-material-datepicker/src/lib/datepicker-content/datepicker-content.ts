@@ -43,7 +43,7 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> im
         return this.color ? `mat-${this.color}` : '';
     }
 
-    calendarValue: D | null;
+    calendarValue: D | null = null;
     timeValue: any;
 
     /** Reference to the internal calendar component. */
