@@ -7,6 +7,9 @@ branches:
     channel: alpha
   - name: hotfix/**
     prerelease: true
+  - name: "release/21.x"
+    range: "21.x"
+    prerelease: false
   - name: "release/20.x"
     range: "20.x"
     prerelease: false
