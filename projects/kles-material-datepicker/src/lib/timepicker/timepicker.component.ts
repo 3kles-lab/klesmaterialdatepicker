@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from "@angular/core";
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation, ChangeDetectionStrategy } from "@angular/core";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Subject } from "rxjs";
 import { filter, takeUntil } from "rxjs/operators";
@@ -13,6 +13,7 @@ import { KlesTimeInput } from "./timeinput/timeinput.component";
     styleUrls: ['timepicker.component.scss'],
     imports: [MaterialModule, ReactiveFormsModule, FormsModule, KlesTimeInput],
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: true,
 })
 export class KlesTimePicker implements OnInit, OnDestroy {

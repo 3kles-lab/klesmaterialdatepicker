@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { KlesMatDateAdapter, KlesMatDatepickerIntl, KlesMaterialDatepickerModule } from 'kles-material-datepicker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -28,6 +28,7 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
         MatDatepickerModule,
         KlesMaterialDatepickerModule
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     providers: [
         { provide: KlesMatDateAdapter, useClass: KlesMatLuxonAdapter },
         { provide: DateAdapter, useClass: LuxonDateAdapter },
