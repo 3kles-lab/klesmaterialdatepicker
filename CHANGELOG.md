@@ -1,3 +1,10 @@
+# [20.1.0](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/compare/v20.0.1...v20.1.0) (2026-08-12)
+
+
+### Features
+
+* Update KlesMatDateAdapter implementations ([2589572](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/commit/25895722fa28ac0aee3e9c1d7bad1defd18ae8db))
+
 ## [20.0.1](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/compare/v20.0.0...v20.0.1) (2026-08-12)
 
 
