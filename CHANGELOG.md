@@ -1,3 +1,15 @@
+# [22.1.0](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/compare/v22.0.0...v22.1.0) (2026-08-12)
+
+
+### Bug Fixes
+
+* Update library dependencies ([e415699](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/commit/e41569972a17114c39ab29431bb14527c9173a28))
+
+
+### Features
+
+* Update KlesMatDateAdapter implementations ([e209373](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/commit/e209373162e1c8ccbcea9bd404029904395416b5))
+
 # [22.0.0](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/compare/v21.0.0...v22.0.0) (2026-08-07)
 
 
