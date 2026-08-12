@@ -1,3 +1,10 @@
+## [20.0.1](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/compare/v20.0.0...v20.0.1) (2026-08-12)
+
+
+### Bug Fixes
+
+* Update library dependencies ([48e7843](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/commit/48e7843f0db84f1a50d572ac55b55c6c7de85d8b))
+
 # [20.0.0](http://gitlab.3kles.local/3kles/lib/angular/material/klesmaterialdatepicker/compare/v19.0.6...v20.0.0) (2026-08-07)
 
 
