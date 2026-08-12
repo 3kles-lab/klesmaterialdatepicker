@@ -92,9 +92,9 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> im
     ngOnInit() {
         this.calendarValue = this._model.selection as any;
         this.timeValue = {
-            minute: this._model.selection ? this._dateAdapter.getMinute(this._model.selection as any) : null,
-            hour: this._model.selection ? this._dateAdapter.getHour(this._model.selection as any) : null,
-            second: this._model.selection ? this._dateAdapter.getSecond(this._model.selection as any) : null,
+            minute: this._model.selection ? this._dateAdapter.getMinutes(this._model.selection as any) : null,
+            hour: this._model.selection ? this._dateAdapter.getHours(this._model.selection as any) : null,
+            second: this._model.selection ? this._dateAdapter.getSeconds(this._model.selection as any) : null,
         };
     }
 
@@ -122,8 +122,7 @@ export class KlesMatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>> im
 
     close() {
         if (this.calendarValue) {
-            this.calendarValue = (this._dateAdapter as any).setHour(this.calendarValue, this.timeValue.hour);
-            this.calendarValue = (this._dateAdapter as any).setMinute(this.calendarValue, this.timeValue.minute);
+            this.calendarValue = (this._dateAdapter).setTime(this.calendarValue, this.timeValue.hour, this.timeValue.minute, this.timeValue.second);
             this._model.add(this.calendarValue);
         }
 
